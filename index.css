@@ -1,0 +1,282 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding: 40px 40px; /* Adjust the padding here */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo-container {
+    position: absolute;
+    left: 20px; /* Adjust the padding from the left side here */
+}
+
+header .logo {
+    width: 100px; /* Adjust the size of the logo here */
+    height: auto;
+}
+
+
+header .chat-container {
+    position: absolute;
+    right: 150px; /* Adjust the position to align the icon correctly */
+    top: 50%; /* Center vertically relative to the header */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+header .chats {
+    width: 60px; /* Adjust the size of the icon */
+    height: auto;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+header .chat-link:hover .chats {
+    content: url('images/bluechat.png'); /* Change icon on hover */
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 30px;
+    position: relative; /* Ensure the popup is positioned relative to the tab */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #888888;
+    font-weight: 400;
+    font-size: 1.2em; /* Adjust the font size of the tab names here */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+.about-us-tab:hover #about-us-dropdown {
+    display: block; /* Show the popup when hovering over the About us tab */
+}
+
+.mega-box {
+    display: none; /* Hide the popup by default */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Center the dropdown */
+    width: auto;
+    background-color: #f0f0f0; /* Grey background */
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Ensure the popup is above other content */
+}
+
+.mega-box .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .row {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    margin: 0 20px; /* Add margin to space out the rows */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px; /* Space between images */
+}
+
+.about-img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    object-fit: cover;
+    /* Remove border-radius to make the images rectangular */
+}
+
+.image-container p {
+    color: #333; /* Darker grey text */
+    margin: 5px 0 0;
+    font-weight: bold;
+}
+
+#about-us-links {
+    display: flex;
+    flex-direction: column; /* Ensure the links are in a vertical list */
+    align-items: flex-start; /* Align items to the start of the container */
+}
+
+.mega-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-links li {
+    margin-bottom: 10px;
+}
+
+.mega-links li a {
+    color: #333; /* Darker grey text */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mega-links li a:hover {
+    color: #007bff; /* Blue on hover */
+}
+
+main {
+    padding-top: 120px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-text {
+    font-size: 8em;
+    color: #8c8c8c;
+    font-weight: 900; /* Use Poppins Black for bold text */
+    line-height: 0.9; /* Reduce spacing between lines */
+    margin: 0;
+    margin-top: 10px; /* Move text slightly closer to the top */
+}
+
+.animated-ombre {
+    background: linear-gradient(270deg, #578fff, #0084ff, #5deed1);
+    background-size: 200% 200%;
+    animation: ombre 2s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes ombre {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -100px; /* Move image and button closer to the text */
+}
+
+.hero-image {
+    width: 700px; /* Increase width */
+    height: 270px;
+    margin-bottom: 10px; /* Adjust the spacing below the image */
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-weight: 700; /* Bold text */
+    color: white;
+    background-color: #007bff; /* Blue background */
+    border-radius: 10px; /* Rounded corners */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 10px; /* Move the button slightly to the right */
+}
+
+.hero-button:hover {
+    color: #007bff; /* Blue text */
+    background-color: white; /* White background */
+    border: 2px solid #007bff; /* Border matching shape */
+}
+
+.products-tab:hover #products-dropdown {
+    display: block;
+}
+
+#products-dropdown {
+    width: auto;
+    min-width: 200px; /* Adjust this value to set the minimum width of the dropdown */
+}
+
+#products-dropdown .content {
+    padding: 10px;
+}
+
+#products-dropdown .mega-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#products-dropdown .mega-links li {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#products-dropdown .mega-links li a {
+    color: #878787; /* Darker grey text to match About Us dropdown */
+    text-decoration: none;
+    font-weight: normal; /* Changed from bold to normal */
+    transition: color 0.3s ease;
+    font-size: 1.2em; /* Match the font size with About Us dropdown */
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+#products-dropdown .mega-links li a:hover {
+    color: #007bff; /* Blue on hover, matching About Us dropdown */
+}
+
+.section3 {
+    flex-grow: 1; 
+    text-align: left; 
+    padding: 40px;
+    background-color: #140c7d;
+    margin-top: 140px;
+}
+
